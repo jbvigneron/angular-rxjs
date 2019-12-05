@@ -1,0 +1,54 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-md-3 mt-3">
+      <div class="list-group mt-2">
+        <a class="list-group-item" [routerLink]="['/subscribe']" routerLinkActive="active">
+          Subscribe
+        </a>
+        <a class="list-group-item" [routerLink]="['/subscribe-async']" routerLinkActive="active">
+          Subscribe (pipe async)
+        </a>
+        <a class="list-group-item" [routerLink]="['/subscribe-to-errors']" routerLinkActive="active">
+          Subscribe (erreurs)
+        </a>
+      </div>
+
+      <div class="list-group mt-2">
+        <a class="list-group-item" [routerLink]="['/from-vs-of']" routerLinkActive="active">
+          from vs. of
+        </a>
+      </div>
+
+      <div class="list-group mt-2">
+        <a class="list-group-item" [routerLink]="['/range-filter']" routerLinkActive="active">
+          Range (filter)
+        </a>
+        <a class="list-group-item" [routerLink]="['/range-map']" routerLinkActive="active">
+          Range (map)
+        </a>
+        <a class="list-group-item" [routerLink]="['/range-map-filter']" routerLinkActive="active">
+          Range (map + filter)
+        </a>
+      </div>
+
+      <div class="list-group mt-2">
+        <a class="list-group-item" [routerLink]="['/swapi']" routerLinkActive="active">
+          Star Wars API
+        </a>
+      </div>
+
+      <div class="list-group mt-2">
+        <a class="list-group-item" [routerLink]="['/duration']" routerLinkActive="active">
+          Clicks souris
+        </a>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-8 mt-3">
+      <div class="card">
+        <div class="card-body">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
