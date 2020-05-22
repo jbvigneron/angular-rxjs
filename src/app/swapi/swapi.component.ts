@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Movie } from './movie';
-import { map, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Component({
   templateUrl: './swapi.component.html',
@@ -13,7 +13,7 @@ export class SwapiComponent {
   loading = true;
 
   constructor(http: HttpClient) {
-    const url = 'https://swapi.co/api/films/?format=json';
+    const url = 'https://swapi.dev/api/films/?format=json';
 
     this.movies$ = http.get<any>(url).pipe(
       map(response => response.results),
@@ -27,12 +27,5 @@ export class SwapiComponent {
         )
       )
     );
-
-    this.movies$.subscribe({
-      complete: () => {
-        this.loading = false;
-        console.log('Flux reçu');
-      }
-    });
   }
 }
