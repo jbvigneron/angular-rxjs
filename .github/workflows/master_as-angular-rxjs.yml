@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - as-angular-rxjs
+name: Build and deploy to Azure - as-angular-rxjs
 
 on:
   push:
@@ -32,4 +32,4 @@ jobs:
         app-name: 'as-angular-rxjs'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_40fbc389636d4fa69c1e814d231d8c10 }}
-        package: .
+        package: './dist/angular-rxjs'
