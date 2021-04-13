@@ -3,8 +3,7 @@ import { Observable, range } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
 @Component({
-  templateUrl: './range-filter.component.html',
-  styleUrls: ['./range-filter.component.scss']
+  templateUrl: './range-filter.component.html'
 })
 export class RangeFilterComponent {
   range$: Observable<number>;

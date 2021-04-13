@@ -3,8 +3,7 @@ import { fromEvent, Subscription } from 'rxjs';
 import { map, pairwise } from 'rxjs/operators';
 
 @Component({
-  templateUrl: './duration.component.html',
-  styleUrls: ['./duration.component.scss']
+  templateUrl: './duration.component.html'
 })
 export class DurationComponent implements OnDestroy {
   subscription: Subscription;

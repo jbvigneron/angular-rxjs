@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { Observable, of, from } from 'rxjs';
 
 @Component({
-  templateUrl: './from-vs-of.component.html',
-  styleUrls: ['./from-vs-of.component.scss']
+  templateUrl: './from-vs-of.component.html'
 })
 export class FromVsOfComponent {
   of$: Observable<number[]>;

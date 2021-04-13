@@ -4,8 +4,7 @@ import { range } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Component({
-  templateUrl: './range-map.component.html',
-  styleUrls: ['./range-map.component.scss']
+  templateUrl: './range-map.component.html'
 })
 export class RangeMapComponent {
   range$: Observable<number>;

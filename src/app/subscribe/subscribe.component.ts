@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 @Component({
-  templateUrl: './subscribe.component.html',
-  styleUrls: ['./subscribe.component.scss']
+  templateUrl: './subscribe.component.html'
 })
 export class SubscribeComponent {
   onNext$: Observable<string>;
