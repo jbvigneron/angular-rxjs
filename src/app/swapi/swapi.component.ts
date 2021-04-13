@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Movie } from './movie';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
+import { ResultMovies } from './result';
 
 @Component({
   templateUrl: './swapi.component.html',
@@ -15,17 +16,10 @@ export class SwapiComponent {
   constructor(http: HttpClient) {
     const url = 'https://swapi.dev/api/films/?format=json';
 
-    this.movies$ = http.get<any>(url).pipe(
+    this.movies$ = http.get<ResultMovies>(url).pipe(
+      tap(() => this.loading = false),
       map(response => response.results),
-      map(results =>
-        results.map(
-          result => new Movie(
-            result.title,
-            result.episode_id,
-            result.director,
-            result.release_date.substring(0, 4))
-        )
-      )
+      map(movies => movies.sort((a, b) => a.episode_id - b.episode_id)) // réordonner les films par n° d'épisode
     );
   }
 }
